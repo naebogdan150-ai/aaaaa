@@ -1,0 +1,634 @@
+<!DOCTYPE html>
+<html lang="ro">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>VOLT — Solar Skin</title>
+  <link rel="stylesheet" href="css/styles.css" />
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.5/gsap.min.js"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.5/ScrollTrigger.min.js"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.5/TextPlugin.min.js"></script>
+</head>
+<body>
+
+  <!-- ─── NAVIGAȚIE ─────────────────────────────────────────────── -->
+  <nav id="navbar">
+    <div class="nav-inner">
+      <a href="#hero" class="logo">VOLT<span class="dot">.</span></a>
+      <ul class="nav-links">
+        <li><a href="#product">Produs</a></li>
+        <li><a href="#features">Avantaje</a></li>
+        <li><a href="#how">Cum funcționează</a></li>
+        <li><a href="#market">Piața țintă</a></li>
+        <li><a href="#pricing">Prețuri</a></li>
+        <li><a href="#contact" class="nav-cta">Solicită ofertă</a></li>
+      </ul>
+      <button class="hamburger" id="hamburger" aria-label="Meniu">
+        <span></span><span></span><span></span>
+      </button>
+    </div>
+  </nav>
+
+  <!-- Meniu mobil -->
+  <div class="mobile-menu" id="mobileMenu">
+    <ul>
+      <li><a href="#product" class="mob-link">Produs</a></li>
+      <li><a href="#features" class="mob-link">Avantaje</a></li>
+      <li><a href="#how" class="mob-link">Cum funcționează</a></li>
+      <li><a href="#market" class="mob-link">Piața țintă</a></li>
+      <li><a href="#pricing" class="mob-link">Prețuri</a></li>
+      <li><a href="#contact" class="mob-link">Contact</a></li>
+    </ul>
+  </div>
+
+  <!-- ─── HERO ───────────────────────────────────────────────────── -->
+  <section id="hero" class="hero-section">
+    <canvas id="solarCanvas"></canvas>
+    <div class="hero-content">
+      <p class="hero-eyebrow">Prezentăm</p>
+      <h1 class="hero-title">
+        <span class="word">Solar</span>
+        <span class="word accent"> Skin</span>
+      </h1>
+      <p class="hero-sub">SOLAR. SIMPLU. SIGUR.</p>
+      <p class="hero-desc">Primul sistem solar universal pentru vehicule electrice.<br>Mai multă autonomie. Mai puține opriri la încărcare. Zero compromisuri.</p>
+      <div class="hero-actions">
+        <a href="#product" class="btn btn-primary">Descoperă</a>
+        <a href="#pricing" class="btn btn-ghost">Vezi prețurile</a>
+      </div>
+    </div>
+    <div class="hero-scroll-hint">
+      <span>Derulează</span>
+      <div class="scroll-line"></div>
+    </div>
+  </section>
+
+  <!-- ─── TAGLINE STRIP ──────────────────────────────────────────── -->
+  <section class="tagline-section">
+    <div class="tagline-inner">
+      <div class="tagline-track">
+        <span>Inovație &nbsp;·&nbsp;</span>
+        <span>Sustenabilitate &nbsp;·&nbsp;</span>
+        <span>Calitate &nbsp;·&nbsp;</span>
+        <span>Responsabilitate &nbsp;·&nbsp;</span>
+        <span>Accesibilitate &nbsp;·&nbsp;</span>
+        <span>Orientare spre client &nbsp;·&nbsp;</span>
+        <span>Inovație &nbsp;·&nbsp;</span>
+        <span>Sustenabilitate &nbsp;·&nbsp;</span>
+        <span>Calitate &nbsp;·&nbsp;</span>
+        <span>Responsabilitate &nbsp;·&nbsp;</span>
+        <span>Accesibilitate &nbsp;·&nbsp;</span>
+        <span>Orientare spre client &nbsp;·&nbsp;</span>
+      </div>
+    </div>
+  </section>
+
+  <!-- ─── SECȚIUNEA PROBLEMĂ ────────────────────────────────────── -->
+  <section id="problem" class="problem-section">
+    <div class="container">
+      <p class="section-label">Problema</p>
+      <h2 class="reveal-text">Mobilitatea electrică are<br><span class="accent">o problemă de autonomie.</span></h2>
+      <div class="problem-grid">
+        <div class="problem-card" data-delay="0">
+          <div class="problem-icon">⚡</div>
+          <h3>Autonomie limitată</h3>
+          <p>Vehiculele electrice sunt limitate de capacitatea bateriei și depind de o infrastructură densă de încărcare.</p>
+        </div>
+        <div class="problem-card" data-delay="0.15">
+          <div class="problem-icon">🔌</div>
+          <h3>Dependență de încărcare</h3>
+          <p>Milioane de șoferi trebuie să caute zilnic stații de încărcare — consumator de timp și adesea nesigur.</p>
+        </div>
+        <div class="problem-card" data-delay="0.3">
+          <div class="problem-icon">💰</div>
+          <h3>Costuri energetice în creștere</h3>
+          <p>Costurile cu energia cresc continuu. Șoferii de vehicule electrice plătesc mai mult — fără alternative.</p>
+        </div>
+        <div class="problem-card" data-delay="0.45">
+          <div class="problem-icon">🌍</div>
+          <h3>Infrastructură insuficientă</h3>
+          <p>În multe regiuni lipsește o rețea extinsă de încărcare — mai ales în afara orașelor mari.</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ─── REVEAL PRODUS ─────────────────────────────────────────── -->
+  <section id="product" class="product-section">
+    <div class="product-sticky">
+      <div class="product-text-panel">
+        <p class="section-label">Soluția</p>
+        <h2>Solar <span class="accent">Skin</span></h2>
+        <p class="product-tagline">De la VOLT</p>
+        <p class="product-desc">
+          Un sistem de panouri fotovoltaice flexibile, ultra-subțiri, montat pe acoperișul vehiculului tău electric. Solar Skin convertește energia solară în electricitate utilizabilă — fără a modifica designul mașinii tale.
+        </p>
+        <ul class="product-bullets">
+          <li class="bullet-item"><span class="bullet-icon">✦</span> Universal, compatibil cu toate modelele de vehicule electrice</li>
+          <li class="bullet-item"><span class="bullet-icon">✦</span> Ultra-subțire &amp; aerodinamic</li>
+          <li class="bullet-item"><span class="bullet-icon">✦</span> Sistem inteligent de management al energiei</li>
+          <li class="bullet-item"><span class="bullet-icon">✦</span> Aplicație mobilă pentru monitorizare în timp real</li>
+          <li class="bullet-item"><span class="bullet-icon">✦</span> Instalare prin parteneri autorizați</li>
+        </ul>
+      </div>
+      <div class="product-visual-panel">
+        <div class="solar-car-wrap">
+          <div class="car-body">
+            <div class="car-roof">
+              <div class="solar-panel-anim">
+                <div class="solar-grid"></div>
+                <div class="solar-glow"></div>
+                <div class="energy-particles" id="energyParticles"></div>
+              </div>
+            </div>
+            <div class="car-windows">
+              <div class="car-window front"></div>
+              <div class="car-window rear"></div>
+            </div>
+            <div class="car-body-lower">
+              <div class="car-door-lines">
+                <div class="door-line"></div>
+                <div class="door-line"></div>
+              </div>
+            </div>
+            <div class="car-wheels">
+              <div class="wheel wheel-front"><div class="wheel-inner"></div></div>
+              <div class="wheel wheel-rear"><div class="wheel-inner"></div></div>
+            </div>
+          </div>
+          <div class="energy-beam"></div>
+          <div class="energy-percentage">
+            <span class="pct-num">+</span><span class="pct-val" id="pctVal">0</span><span class="pct-sym">%</span>
+            <p>Mai multă autonomie</p>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ─── STATISTICI ────────────────────────────────────────────── -->
+  <section class="stats-section">
+    <div class="container">
+      <div class="stats-grid">
+        <div class="stat-item">
+          <span class="stat-num" data-target="1500">0</span><span class="stat-unit">€</span>
+          <p class="stat-label">Prețul sistemului</p>
+        </div>
+        <div class="stat-item">
+          <span class="stat-num" data-target="400">0</span><span class="stat-unit">€</span>
+          <p class="stat-label">Profit per unitate</p>
+        </div>
+        <div class="stat-item">
+          <span class="stat-num" data-target="100">0</span><span class="stat-unit">%</span>
+          <p class="stat-label">Energie regenerabilă</p>
+        </div>
+        <div class="stat-item">
+          <span class="stat-num" data-target="500">0</span><span class="stat-unit">k RON</span>
+          <p class="stat-label">Investiție inițială</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ─── CARACTERISTICI ────────────────────────────────────────── -->
+  <section id="features" class="features-section">
+    <div class="container">
+      <p class="section-label">Tehnologie</p>
+      <h2 class="reveal-text">Construit pentru<br><span class="accent">performanță maximă.</span></h2>
+      <div class="features-grid">
+
+        <div class="feature-card large" data-index="0">
+          <div class="feature-icon-wrap">
+            <div class="feature-icon-svg">
+              <svg viewBox="0 0 60 60" fill="none">
+                <circle cx="30" cy="30" r="28" stroke="currentColor" stroke-width="1.5"/>
+                <path d="M30 10 L30 50 M10 30 L50 30" stroke="currentColor" stroke-width="1.5"/>
+                <circle cx="30" cy="30" r="8" fill="currentColor" opacity="0.3"/>
+                <circle cx="30" cy="30" r="3" fill="currentColor"/>
+              </svg>
+            </div>
+          </div>
+          <h3>Panouri fotovoltaice flexibile</h3>
+          <p>Celule solare de ultimă generație din materiale ușoare și rezistente. Se adaptează oricărui acoperiș de vehicul fără a afecta aerodinamica.</p>
+        </div>
+
+        <div class="feature-card" data-index="1">
+          <div class="feature-icon-wrap">
+            <div class="feature-icon-svg">
+              <svg viewBox="0 0 60 60" fill="none">
+                <rect x="10" y="15" width="40" height="30" rx="4" stroke="currentColor" stroke-width="1.5"/>
+                <path d="M20 30 L25 25 L30 32 L35 20 L40 30" stroke="currentColor" stroke-width="1.5" stroke-linejoin="round"/>
+              </svg>
+            </div>
+          </div>
+          <h3>Controler inteligent de energie</h3>
+          <p>Monitorizează și optimizează fluxul de energie în timp real între panourile solare și bateria vehiculului.</p>
+        </div>
+
+        <div class="feature-card" data-index="2">
+          <div class="feature-icon-wrap">
+            <div class="feature-icon-svg">
+              <svg viewBox="0 0 60 60" fill="none">
+                <rect x="18" y="8" width="24" height="44" rx="4" stroke="currentColor" stroke-width="1.5"/>
+                <path d="M26 44 L34 44" stroke="currentColor" stroke-width="2" stroke-linecap="round"/>
+                <path d="M26 20 L30 16 L34 20" stroke="currentColor" stroke-width="1.5"/>
+                <path d="M26 28 L34 28 M26 33 L32 33" stroke="currentColor" stroke-width="1.2"/>
+              </svg>
+            </div>
+          </div>
+          <h3>Aplicație mobilă</h3>
+          <p>Monitorizare în timp real a producției de energie, nivelului bateriei și a cantității de CO₂ economisită direct de pe smartphone-ul tău.</p>
+        </div>
+
+        <div class="feature-card" data-index="3">
+          <div class="feature-icon-wrap">
+            <div class="feature-icon-svg">
+              <svg viewBox="0 0 60 60" fill="none">
+                <path d="M30 10 L38 26 L55 28 L43 40 L46 57 L30 49 L14 57 L17 40 L5 28 L22 26 Z" stroke="currentColor" stroke-width="1.5" stroke-linejoin="round"/>
+              </svg>
+            </div>
+          </div>
+          <h3>Design discret</h3>
+          <p>Profil ultra-subțire care păstrează complet aspectul original al vehiculului tău — fără modificări vizibile.</p>
+        </div>
+
+        <div class="feature-card large right" data-index="4">
+          <div class="feature-icon-wrap">
+            <div class="feature-icon-svg">
+              <svg viewBox="0 0 60 60" fill="none">
+                <path d="M10 50 L10 30 L20 25 L30 35 L40 15 L50 20 L50 50 Z" fill="currentColor" opacity="0.15" stroke="currentColor" stroke-width="1.5" stroke-linejoin="round"/>
+              </svg>
+            </div>
+          </div>
+          <h3>Compatibilitate universală</h3>
+          <p>Ca unică soluție pe piață, poate fi instalat pe vehicule electrice existente de orice marcă și model — fără a cumpăra un vehicul nou.</p>
+        </div>
+
+      </div>
+    </div>
+  </section>
+
+  <!-- ─── CUM FUNCȚIONEAZĂ ──────────────────────────────────────── -->
+  <section id="how" class="how-section">
+    <div class="container">
+      <p class="section-label">Proces</p>
+      <h2 class="reveal-text">Simplu.<br><span class="accent">În trei pași.</span></h2>
+      <div class="steps-wrap">
+        <div class="steps-line">
+          <div class="steps-progress" id="stepsProgress"></div>
+        </div>
+        <div class="step" data-step="1">
+          <div class="step-num">01</div>
+          <div class="step-content">
+            <h3>Consultanță &amp; Selecție</h3>
+            <p>Echipa noastră analizează modelul vehiculului tău și selectează pachetul de configurare Solar Skin potrivit. Fiecare configurație este adaptată individual pentru vehiculul tău.</p>
+          </div>
+          <div class="step-visual">
+            <div class="step-icon-wrap">
+              <svg viewBox="0 0 80 80" fill="none">
+                <circle cx="40" cy="40" r="38" stroke="currentColor" stroke-width="1" opacity="0.3"/>
+                <path d="M25 40 C25 32 32 25 40 25 C48 25 55 32 55 40" stroke="currentColor" stroke-width="2" stroke-linecap="round"/>
+                <circle cx="40" cy="50" r="3" fill="currentColor"/>
+                <path d="M40 47 L40 35" stroke="currentColor" stroke-width="2" stroke-linecap="round"/>
+              </svg>
+            </div>
+          </div>
+        </div>
+        <div class="step" data-step="2">
+          <div class="step-num">02</div>
+          <div class="step-content">
+            <h3>Instalare profesională</h3>
+            <p>Tehnicienii certificați fixează panourile flexibile pe acoperișul vehiculului tău, conectează unitatea de control și integrează totul în sistemul electric al vehiculului.</p>
+          </div>
+          <div class="step-visual">
+            <div class="step-icon-wrap">
+              <svg viewBox="0 0 80 80" fill="none">
+                <rect x="20" y="30" width="40" height="20" rx="3" stroke="currentColor" stroke-width="1.5"/>
+                <rect x="25" y="34" width="10" height="12" rx="1" stroke="currentColor" stroke-width="1"/>
+                <rect x="38" y="34" width="10" height="12" rx="1" stroke="currentColor" stroke-width="1"/>
+                <path d="M20 35 L10 35 M60 35 L70 35" stroke="currentColor" stroke-width="1.5" stroke-linecap="round"/>
+                <path d="M40 50 L40 60" stroke="currentColor" stroke-width="1.5" stroke-linecap="round"/>
+                <circle cx="40" cy="63" r="3" stroke="currentColor" stroke-width="1.5"/>
+              </svg>
+            </div>
+          </div>
+        </div>
+        <div class="step" data-step="3">
+          <div class="step-num">03</div>
+          <div class="step-content">
+            <h3>Conduce &amp; Economisește</h3>
+            <p>Din prima zi însorită, vehiculul tău produce propria energie. Aplicația îți arată zilnic cât ai economisit și cât CO₂ ai redus.</p>
+          </div>
+          <div class="step-visual">
+            <div class="step-icon-wrap">
+              <svg viewBox="0 0 80 80" fill="none">
+                <path d="M20 55 L35 40 L45 50 L60 30" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+                <circle cx="60" cy="30" r="4" fill="currentColor"/>
+                <path d="M20 65 L60 65" stroke="currentColor" stroke-width="1" opacity="0.4"/>
+              </svg>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ─── AVANTAJE COMPETITIVE ─────────────────────────────────── -->
+  <section class="advantage-section">
+    <div class="container">
+      <p class="section-label">Piață</p>
+      <h2 class="reveal-text">De ce <span class="accent">VOLT Solar Skin</span><br>este alegerea mai bună.</h2>
+      <div class="compare-table">
+        <div class="compare-col header-col">
+          <div class="compare-cell header-cell"></div>
+          <div class="compare-cell">Retrofit universal</div>
+          <div class="compare-cell">Nu necesită vehicul nou</div>
+          <div class="compare-cell">Multiple modele de vehicule</div>
+          <div class="compare-cell">Preț de la 1.500€</div>
+          <div class="compare-cell">Sistem inteligent cu aplicație</div>
+          <div class="compare-cell">Design ultra-subțire</div>
+        </div>
+        <div class="compare-col volt-col">
+          <div class="compare-cell header-cell volt-header">Solar Skin<br><small>by VOLT</small></div>
+          <div class="compare-cell">✓</div>
+          <div class="compare-cell">✓</div>
+          <div class="compare-cell">✓</div>
+          <div class="compare-cell">✓</div>
+          <div class="compare-cell">✓</div>
+          <div class="compare-cell">✓</div>
+        </div>
+        <div class="compare-col">
+          <div class="compare-cell header-cell">Sono Motors</div>
+          <div class="compare-cell">✗</div>
+          <div class="compare-cell">✗</div>
+          <div class="compare-cell">✗</div>
+          <div class="compare-cell">✗</div>
+          <div class="compare-cell">—</div>
+          <div class="compare-cell">—</div>
+        </div>
+        <div class="compare-col">
+          <div class="compare-cell header-cell">Lightyear</div>
+          <div class="compare-cell">✗</div>
+          <div class="compare-cell">✗</div>
+          <div class="compare-cell">✗</div>
+          <div class="compare-cell">✗</div>
+          <div class="compare-cell">—</div>
+          <div class="compare-cell">—</div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ─── PIAȚA ȚINTĂ ───────────────────────────────────────────── -->
+  <section id="market" class="market-section">
+    <div class="container">
+      <p class="section-label">Piața țintă</p>
+      <h2 class="reveal-text">Pentru cine este<br><span class="accent">Solar Skin?</span></h2>
+      <div class="market-grid">
+        <div class="market-card b2c">
+          <div class="market-badge">B2C</div>
+          <h3>Persoane fizice</h3>
+          <ul>
+            <li>Proprietari de vehicule electrice 25–60 ani</li>
+            <li>Venituri medii până la ridicate</li>
+            <li>Interesați de tehnologie și inovație</li>
+            <li>Conștiincioși față de mediu</li>
+            <li>Dispuși să investească 1.500–2.500€</li>
+          </ul>
+          <div class="market-glow"></div>
+        </div>
+        <div class="market-card b2b">
+          <div class="market-badge">B2B</div>
+          <h3>Companii</h3>
+          <ul>
+            <li>Firme cu flote de vehicule electrice</li>
+            <li>Servicii de curierat, transport urban, livrări</li>
+            <li>Companii de închirieri auto</li>
+            <li>Dealeri și producători auto</li>
+            <li>Focus pe reducerea costurilor energetice</li>
+          </ul>
+          <div class="market-glow"></div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ─── PREȚURI ────────────────────────────────────────────────── -->
+  <section id="pricing" class="pricing-section">
+    <div class="container">
+      <p class="section-label">Investiție</p>
+      <h2 class="reveal-text">Prețuri<br><span class="accent">transparente.</span></h2>
+      <div class="pricing-grid">
+        <div class="price-card" data-delay="0">
+          <div class="price-label">Sistem Solar Skin</div>
+          <div class="price-amount">
+            <span class="price-currency">€</span>
+            <span class="price-num">1.500</span>
+          </div>
+          <div class="price-desc">Investiție unică</div>
+          <ul class="price-features">
+            <li>Panouri fotovoltaice flexibile</li>
+            <li>Controler inteligent de energie</li>
+            <li>Modul de conexiune</li>
+            <li>Aplicație mobilă de monitorizare</li>
+            <li>Garanție 2 ani</li>
+          </ul>
+          <a href="#contact" class="btn btn-outline">Solicită</a>
+        </div>
+        <div class="price-card featured" data-delay="0.15">
+          <div class="price-popular">Recomandat</div>
+          <div class="price-label">Sistem + Instalare</div>
+          <div class="price-amount">
+            <span class="price-currency">€</span>
+            <span class="price-num">1.750</span>
+          </div>
+          <div class="price-desc">Incl. instalare certificată</div>
+          <ul class="price-features">
+            <li>Tot din pachetul Sistem</li>
+            <li>Instalare profesională</li>
+            <li>Punere în funcțiune tehnică</li>
+            <li>Prima inspecție inclusă</li>
+            <li>Garanție extinsă 3 ani</li>
+          </ul>
+          <a href="#contact" class="btn btn-primary">Solicită acum</a>
+        </div>
+        <div class="price-card" data-delay="0.3">
+          <div class="price-label">Pachet flotă (B2B)</div>
+          <div class="price-amount">
+            <span class="price-currency">de la </span>
+            <span class="price-num">Personalizat</span>
+          </div>
+          <div class="price-desc">Reduceri pentru flote</div>
+          <ul class="price-features">
+            <li>Tot din Sistem + Instalare</li>
+            <li>Integrare management flotă</li>
+            <li>Reprezentant dedicat</li>
+            <li>Mentenanță anuală 100€/unitate</li>
+            <li>Suport prioritar</li>
+          </ul>
+          <a href="#contact" class="btn btn-outline">Solicită ofertă</a>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ─── ROADMAP ─────────────────────────────────────────────────── -->
+  <section class="roadmap-section">
+    <div class="container">
+      <p class="section-label">Roadmap</p>
+      <h2 class="reveal-text">Etapele noastre<br><span class="accent">de dezvoltare.</span></h2>
+      <div class="roadmap-timeline">
+        <div class="rm-item" data-rm="1">
+          <div class="rm-dot"></div>
+          <div class="rm-content">
+            <span class="rm-phase">Faza 1</span>
+            <h3>Prototip &amp; Dezvoltare</h3>
+            <p>Dezvoltarea și testarea prototipului funcțional Solar Skin. Obținerea certificărilor tehnice și protecția proprietății intelectuale prin înregistrarea brevetelor.</p>
+          </div>
+        </div>
+        <div class="rm-item" data-rm="2">
+          <div class="rm-dot"></div>
+          <div class="rm-content">
+            <span class="rm-phase">Faza 2</span>
+            <h3>Finanțare &amp; Construcție</h3>
+            <p>Atragerea de investiții private, fonduri europene pentru proiecte verzi și sponsorizări. Înființarea facilității de producție și recrutarea inginerilor, tehnicienilor și echipei de marketing.</p>
+          </div>
+        </div>
+        <div class="rm-item" data-rm="3">
+          <div class="rm-dot"></div>
+          <div class="rm-content">
+            <span class="rm-phase">Faza 3</span>
+            <h3>Lansare pe piață</h3>
+            <p>Stabilirea parteneriatelor cu furnizori și service-uri auto. Lansarea la nivel național prin promovare online, târguri și parteneriate cu dealeri.</p>
+          </div>
+        </div>
+        <div class="rm-item" data-rm="4">
+          <div class="rm-dot"></div>
+          <div class="rm-content">
+            <span class="rm-phase">Faza 4</span>
+            <h3>Expansiune europeană</h3>
+            <p>Scalarea pe piețele europene. Extinderea rețelei de parteneri cu producători auto, dealeri și companii de management al flotelor.</p>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ─── SUSTENABILITATE ─────────────────────────────────────────── -->
+  <section class="sustainability-section">
+    <div class="container">
+      <p class="section-label">Sustenabilitate</p>
+      <h2 class="reveal-text">Bun pentru tine.<br><span class="accent">Bun pentru planetă.</span></h2>
+      <div class="sustain-grid">
+        <div class="sustain-card" data-delay="0">
+          <div class="sustain-icon">🌱</div>
+          <h3>Ecologic</h3>
+          <p>Reduce consumul de energie convențională și emisiile de CO₂. Utilizează materiale reciclabile și promovează energia verde.</p>
+        </div>
+        <div class="sustain-card" data-delay="0.15">
+          <div class="sustain-icon">📈</div>
+          <h3>Economic</h3>
+          <p>Dezvoltă piața tehnologiilor verzi, creează oportunități de profit pe termen lung și optimizează costurile operaționale prin parteneriate cu energie regenerabilă.</p>
+        </div>
+        <div class="sustain-card" data-delay="0.3">
+          <div class="sustain-icon">🤝</div>
+          <h3>Social</h3>
+          <p>Creează locuri de muncă pentru ingineri și specialiști IT, sprijină inovația și încurajează populația să adopte soluții ecologice.</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ─── CONTACT ─────────────────────────────────────────────────── -->
+  <section id="contact" class="contact-section">
+    <div class="container">
+      <p class="section-label">Contact</p>
+      <h2 class="reveal-text">Ești pregătit să conduci<br><span class="accent">viitorul?</span></h2>
+      <p class="contact-sub">Contactează-ne pentru o consultanță individuală sau o ofertă fără obligații.</p>
+      <form class="contact-form" id="contactForm" onsubmit="handleSubmit(event)">
+        <div class="form-row">
+          <div class="form-group">
+            <label for="name">Nume</label>
+            <input type="text" id="name" name="name" placeholder="Ion Popescu" required />
+          </div>
+          <div class="form-group">
+            <label for="email">E-mail</label>
+            <input type="email" id="email" name="email" placeholder="ion@exemplu.ro" required />
+          </div>
+        </div>
+        <div class="form-group">
+          <label for="interest">Interes</label>
+          <select id="interest" name="interest">
+            <option value="private">Persoană fizică — instalare Solar Skin</option>
+            <option value="fleet">Companie — cerere pentru flotă</option>
+            <option value="dealer">Dealer / Partener</option>
+            <option value="investor">Cerere investitori</option>
+            <option value="other">Altele</option>
+          </select>
+        </div>
+        <div class="form-group">
+          <label for="message">Mesaj</label>
+          <textarea id="message" name="message" placeholder="Descrie pe scurt solicitarea ta…" rows="5"></textarea>
+        </div>
+        <button type="submit" class="btn btn-primary btn-full">
+          <span class="btn-text">Trimite mesajul</span>
+          <span class="btn-arrow">→</span>
+        </button>
+        <div class="form-success" id="formSuccess">
+          <span>✓</span> Mesajul tău a fost trimis. Te contactăm în curând!
+        </div>
+      </form>
+    </div>
+  </section>
+
+  <!-- ─── FOOTER ──────────────────────────────────────────────────── -->
+  <footer class="site-footer">
+    <div class="container">
+      <div class="footer-top">
+        <div class="footer-brand">
+          <a href="#hero" class="logo">VOLT<span class="dot">.</span></a>
+          <p>Solar. Simplu. Sigur.<br>Viitorul energiei verzi pentru vehicule electrice.</p>
+        </div>
+        <div class="footer-links">
+          <div class="footer-col">
+            <h4>Produs</h4>
+            <ul>
+              <li><a href="#product">Solar Skin</a></li>
+              <li><a href="#features">Tehnologie</a></li>
+              <li><a href="#how">Instalare</a></li>
+              <li><a href="#pricing">Prețuri</a></li>
+            </ul>
+          </div>
+          <div class="footer-col">
+            <h4>Companie</h4>
+            <ul>
+              <li><a href="#market">Piața țintă</a></li>
+              <li><a href="#problem">Misiune</a></li>
+              <li><a href="#">Sustenabilitate</a></li>
+              <li><a href="#contact">Contact</a></li>
+            </ul>
+          </div>
+          <div class="footer-col">
+            <h4>Legal</h4>
+            <ul>
+              <li><a href="#">Mențiuni legale</a></li>
+              <li><a href="#">Confidențialitate</a></li>
+              <li><a href="#">Termeni și condiții</a></li>
+            </ul>
+          </div>
+        </div>
+      </div>
+      <div class="footer-bottom">
+        <p>© 2026 VOLT — Solar Skin Technology. Toate drepturile rezervate.</p>
+        <div class="footer-socials">
+          <a href="#" aria-label="LinkedIn">in</a>
+          <a href="#" aria-label="Instagram">ig</a>
+          <a href="#" aria-label="Twitter/X">𝕏</a>
+        </div>
+      </div>
+    </div>
+  </footer>
+
+  <script src="js/main.js"></script>
+</body>
+</html>
